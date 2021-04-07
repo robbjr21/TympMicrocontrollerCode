@@ -1,5 +1,5 @@
 #include <Wire.h>
-int address1 = 40;
+int address = 40;
 
 void setup() {
   Serial.begin (9600);
@@ -9,11 +9,11 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   Wire.beginTransmission(2);
-  int pressure = read_pressure(address1);
+  int pressure = read_pressure(address);
   Serial.print("Sensor: ");
   Serial.print(pressure);
   Serial.println();
-  delay(500);
+  delay(100);
 }
 
 int read_pressure(int address) {
